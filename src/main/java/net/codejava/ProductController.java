@@ -37,7 +37,7 @@ public class ProductController {
 		}
 	}
 	
-	@PostMapping("/products")
+	@PostMapping("/products") // Insert Functions
 	public void add(@RequestBody Product product) {
 		service.save(product);
 	}
