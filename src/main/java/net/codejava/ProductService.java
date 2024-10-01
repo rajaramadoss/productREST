@@ -21,6 +21,15 @@ public class ProductService {
 		repo.save(product);
 		
 	}
+	
+	public Product updateProduct(Product product) {
+		 
+		
+		product.setName(product.getName());
+		product.setPrice(product.getPrice());
+		repo.save(product);
+		return product;
+	}
 	public Product getID(Integer id) {
 		return repo.findById(id).get();
 	}

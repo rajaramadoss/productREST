@@ -47,7 +47,13 @@ public class ProductController {
 
 		try {
 			Product existProduct = service.getID(id);
-			service.save(product);
+			System.out.println("existProduct :: ==>"+existProduct);
+			System.out.println("Product :: ==>"+product);
+			if(existProduct.getId()==id) {
+				System.out.println("id :: ==>"+id);
+				service.updateProduct(product);
+			}
+			
 			return new ResponseEntity<>(HttpStatus.OK);
 		} catch (NoSuchElementException e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
